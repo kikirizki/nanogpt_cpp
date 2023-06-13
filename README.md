@@ -1,1 +1,1 @@
-# nanogpt_cpp
+# C++ version of nanoGPT
