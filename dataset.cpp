@@ -1,7 +1,7 @@
 #include "dataset.h"
 #include <fstream>
 
-std::string ShakesphereDataset::decode(std::vector<size_t> idxs) {}
+std::string Dataset::decode(std::vector<size_t> idxs) {}
 
 std::string read_txt(std::string &path) {
   std::ifstream file(path);
@@ -20,9 +20,9 @@ std::string read_txt(std::string &path) {
   return line;
 }
 
-ShakesphereDataset::ShakesphereDataset(std::string &txt_path,
+Dataset::Dataset(std::string &txt_path,
                                        size_t block_size) {
 
-  ShakesphereDataset::raw_data = read_txt(txt_path);
-  ShakesphereDataset::block_size = block_size;
+  Dataset::raw_data = read_txt(txt_path);
+  Dataset::block_size = block_size;
 }

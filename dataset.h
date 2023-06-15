@@ -5,14 +5,14 @@
 #include <string>
 #include <vector>
 
-class ShakesphereDataset {
+class Dataset {
 
 private:
   size_t block_size = 0;
   std::string raw_data = "";
 
 public:
-  ShakesphereDataset(std::string &txt_path, size_t block_size);
+  Dataset(std::string &txt_path, size_t block_size);
   std::string decode(std::vector<size_t> idxs);
 };
 #endif // SHAKESPEREDATASET_H
