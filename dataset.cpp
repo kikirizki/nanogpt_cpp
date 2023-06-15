@@ -27,6 +27,12 @@ Dataset::Dataset(std::string &txt_path, size_t block_size) {
   Dataset::block_size = block_size;
   std::set<char> char_set(raw_data.begin(), raw_data.end());
   Dataset::vocab = std::string(char_set.begin(), char_set.end());
+  auto encoded = Dataset::encode(raw_data);
+  size_t n = raw_data.length()*0.9;
+
+  Dataset::train_data = std::vector<size_t>(encoded.begin(), encoded.begin() + n);
+  Dataset::val_data = std::vector<size_t>(encoded.begin() + n, encoded.end());
+ 
 }
 
 std::vector<size_t> Dataset::encode(const std::string &text) {
