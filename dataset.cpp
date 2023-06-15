@@ -2,7 +2,7 @@
 #include <fstream>
 #include <set>
 
-std::string Dataset::decode(std::vector<size_t> idxs) {}
+
 
 std::string read_txt(std::string &path) {
   std::ifstream file(path);
@@ -29,4 +29,12 @@ Dataset::Dataset(std::string &txt_path, size_t block_size) {
   std::set<char> char_set(raw_data.begin(), raw_data.end());
   Dataset::vocab = std::string(char_set.begin(), char_set.end());
   
+}
+
+std::vector<size_t> Dataset::encode(std::string &text){
+  std::vector<size_t> idxs;
+  for(auto &character:text){
+     idxs.emplace_back(Dataset::vocab.find(character));
+  }
+  return idxs;
 }

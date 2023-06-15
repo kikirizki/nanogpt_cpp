@@ -14,6 +14,6 @@ private:
 
 public:
   Dataset(std::string &txt_path, size_t block_size);
-  std::string decode(std::vector<size_t> idxs);
+  std::vector<size_t> encode(std::string &txt);
 };
 #endif // SHAKESPEREDATASET_H
