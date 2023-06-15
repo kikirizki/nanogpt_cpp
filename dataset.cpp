@@ -20,11 +20,16 @@ std::string read_txt(const std::string &path) {
   return text;
 }
 
+std::set<char> string2set(const std::string &text) {
+  std::set<char> char_set(text.begin(), text.end());
+  return char_set;
+}
+
 Dataset::Dataset(std::string &txt_path, size_t block_size) {
 
   Dataset::raw_data = read_txt(txt_path);
   Dataset::block_size = block_size;
-  std::set<char> char_set(raw_data.begin(), raw_data.end());
+  auto char_set = string2set(raw_data);
   Dataset::vocab = std::string(char_set.begin(), char_set.end());
 }
 
