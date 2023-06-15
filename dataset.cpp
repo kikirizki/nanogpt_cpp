@@ -13,7 +13,6 @@ std::string read_txt(std::string &path) {
 
   std::string line;
   while (std::getline(file, line)) {
-
     std::string text = line;
   }
 
