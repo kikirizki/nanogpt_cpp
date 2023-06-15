@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/nanogpt.dir/main.cpp.o CMakeFiles/nanogpt.dir/dataset.cpp.o -o nanogpt 

@@ -11,10 +11,9 @@ std::string read_txt(std::string &path) {
     return "";
   }
 
-
   std::string line;
   while (std::getline(file, line)) {
-    
+
     std::string text = line;
   }
 
@@ -27,5 +26,4 @@ ShakesphereDataset::ShakesphereDataset(std::string &txt_path,
 
   ShakesphereDataset::raw_data = read_txt(txt_path);
   ShakesphereDataset::block_size = block_size;
-  
 }
