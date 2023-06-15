@@ -1,0 +1,3 @@
+/home/kiki/nanogpt_cpp/build/CMakeFiles/nanogpt.dir
+/home/kiki/nanogpt_cpp/build/CMakeFiles/edit_cache.dir
+/home/kiki/nanogpt_cpp/build/CMakeFiles/rebuild_cache.dir
