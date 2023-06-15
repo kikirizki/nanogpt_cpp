@@ -7,8 +7,7 @@ int main() {
 
   std::string raw_text = "Hello world";
   auto encoded = shakespere_dataset.encode(raw_text);
-  for(auto &i:encoded){
-    std::cout<<i<<std::endl;
-  }
+  auto decoded = shakespere_dataset.decode(encoded);
+  std::cout<<decoded<<std::endl;
   return 0;
 }

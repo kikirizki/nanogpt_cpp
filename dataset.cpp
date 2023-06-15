@@ -2,8 +2,6 @@
 #include <fstream>
 #include <set>
 
-
-
 std::string read_txt(std::string &path) {
   std::ifstream file(path);
 
@@ -13,9 +11,9 @@ std::string read_txt(std::string &path) {
   }
   std::string text = "";
   std::string line;
-  
+
   while (std::getline(file, line)) {
-    text += line+"\n";
+    text += line + "\n";
   }
 
   file.close();
@@ -28,13 +26,20 @@ Dataset::Dataset(std::string &txt_path, size_t block_size) {
   Dataset::block_size = block_size;
   std::set<char> char_set(raw_data.begin(), raw_data.end());
   Dataset::vocab = std::string(char_set.begin(), char_set.end());
-  
 }
 
-std::vector<size_t> Dataset::encode(std::string &text){
+std::vector<size_t> Dataset::encode(std::string &text) {
   std::vector<size_t> idxs;
-  for(auto &character:text){
-     idxs.emplace_back(Dataset::vocab.find(character));
+  for (auto &character : text) {
+    idxs.emplace_back(Dataset::vocab.find(character));
   }
   return idxs;
+}
+
+std::string Dataset::decode(std::vector<size_t> &idxs) {
+  std::string text = "";
+  for (auto &idx : idxs) {
+    text += Dataset::vocab[idx];
+  }
+  return text;
 }
