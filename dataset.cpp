@@ -25,7 +25,7 @@ Dataset::Dataset(std::string &txt_path, size_t block_size) {
 
   Dataset::raw_data = read_txt(txt_path);
   Dataset::block_size = block_size;
-  std::set<char> char_set(text.begin(), text.end());
+  std::set<char> char_set(raw_data.begin(), raw_data.end());
   Dataset::vocab = std::string(char_set.begin(), char_set.end());
 }
 
