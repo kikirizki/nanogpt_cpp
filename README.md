@@ -1,3 +1,4 @@
+![example workflow](https://github.com/kikirizki/nanogpt_cpp/actions/workflows/cmake.yml/badge.svg)
 # C++ version of nanoGPT
 
 This implementation is based on Andrej Kharpaty's [repo](https://github.com/karpathy/nanogpt)
