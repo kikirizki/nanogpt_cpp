@@ -23,7 +23,7 @@ jobs:
     - name : Download Dataset
       run : cd ${{github.workspace}} && bash scripts/download_dataset.sh 
       
-    - name : Download Dataset
+    - name : Install libtorch
       run : cd ${{github.workspace}} && sudo bash scripts/install_libtorch.sh   
       
     - name: Configure CMake
