@@ -2,7 +2,7 @@
 
 struct BigramLM : torch::nn::Module {
   BigramLM(size_t vocab_size) {
-    token_emb = register_module("token_emb", torch::nn::Embedding(vocab_size, vocab_size));
+    token_emb = register_module("token_emb", torch::nn::Embedding(vocab_size, 32));
   }
 
   torch::Tensor forward(torch::Tensor x, torch::Tensor target= torch::Tensor()) {

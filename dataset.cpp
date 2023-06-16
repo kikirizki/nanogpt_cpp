@@ -35,6 +35,10 @@ Dataset::Dataset(std::string &txt_path, size_t block_size) {
  
 }
 
+size_t Dataset::get_vocab_size(){
+  return Dataset::vocab.size();
+}
+
 std::vector<size_t> Dataset::encode(const std::string &text) {
   std::vector<size_t> idxs;
   for (auto &character : text) {

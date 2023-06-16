@@ -17,7 +17,7 @@ std::pair<torch::Tensor, torch::Tensor> get_batch(std::vector<size_t> &split, co
   auto data_ptr = split.data();
   std::vector<torch::Tensor> xb;
   std::vector<torch::Tensor> yb;
-  auto random_idxs = random_int(0, split.size() - block_size, block_size);
+  auto random_idxs = random_int(0, split.size() - block_size, batch_size);
   for (auto &i : random_idxs) {
     xb.emplace_back(torch::from_blob(data_ptr + i, {block_size}, torch::kLong));
     yb.emplace_back(torch::from_blob(data_ptr + (i + 1), {block_size},torch::kLong ));
@@ -28,11 +28,15 @@ std::pair<torch::Tensor, torch::Tensor> get_batch(std::vector<size_t> &split, co
 int main() {
   std::string dataset_path = "../dataset/tiny_shakesphere/input.txt";
   int block_size = 8;
+  int batch_size = 4;
   auto shakespere_dataset = Dataset(dataset_path, block_size);
   auto train_data = shakespere_dataset.get_train();
   auto val_data = shakespere_dataset.get_val();
-  auto [xb, yb] = get_batch(val_data, block_size);
+  auto [xb, yb] = get_batch(val_data, block_size, batch_size );
+
+  auto model = BigramLM(shakespere_dataset.get_vocab_size());
+  auto out = model.forward(xb);
   std::cout<<xb<<std::endl;
-  std::cout<<yb<<std::endl;
+  
   return 0;
 }
