@@ -21,5 +21,6 @@ public:
   std::string decode(const std::vector<size_t> &idxs);
   std::vector<size_t> get_train();
   std::vector<size_t> get_val();
+  size_t get_vocab_size();
 };
 #endif // SHAKESPEREDATASET_H
