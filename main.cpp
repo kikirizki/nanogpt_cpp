@@ -35,8 +35,8 @@ int main() {
   auto [xb, yb] = get_batch(val_data, block_size, batch_size );
 
   auto model = BigramLM(shakespere_dataset.get_vocab_size());
-  auto out = model.forward(xb);
-  std::cout<<xb<<std::endl;
+  auto loss = model.forward(xb,yb);
+  // std::cout<<loss<<std::endl;
   
   return 0;
 }
