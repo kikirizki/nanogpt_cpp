@@ -50,3 +50,11 @@ std::string Dataset::decode(const std::vector<size_t> &idxs) {
   }
   return text;
 }
+
+std::vector<size_t> Dataset::get_train(){
+  return Dataset::train_data;
+}
+
+std::vector<size_t> Dataset::get_val(){
+  return Dataset::val_data;
+}
