@@ -22,6 +22,9 @@ cmake --build . --config Release
 ```
 
 ## Roadmap
-- [ ] GGLM implementation
-- [x] Libtorch implementation (WIP)
+- [x] BigramLM training
+- [ ] BigramLM inference
+- [ ] Transformer training
+- [ ] Transformer inference
 - [ ] ncnn implementation
+- [ ] GGLM implementation
