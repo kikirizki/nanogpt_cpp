@@ -1,3 +1,5 @@
+#ifndef BIGRAM_LM_H
+#define BIGRAM_LM_H
 #include <torch/torch.h>
 namespace F = torch::nn::functional;
 
@@ -28,3 +30,4 @@ struct BigramLM : torch::nn::Module {
 
   torch::nn::Embedding token_emb{nullptr};
 };
+#endif // BIGRAM_LM_H
