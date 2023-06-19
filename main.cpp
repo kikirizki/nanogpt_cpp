@@ -1,4 +1,5 @@
 #include "bigram_lm.h"
+#include "transformer.h"
 #include "dataset.h"
 #include <random>
 
